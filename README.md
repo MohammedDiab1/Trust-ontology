@@ -1,5 +1,14 @@
 # TrustOntology
 Copyright © 2021 by Imperial College London (ICL), Personal Robotics Lab (PRL). The ontology model represents ontological knowledge for Trust in order to provide better assessment/evaluation for domains that include humans and robots interacting with each other.
+
+# Ontology description
+The knowledge structure contains 3-level ontologies: 
+1.  Trust meta-level ontology:  Upper-level ontology that have common and general concepts to be used.
+2.  Domain level ontology: Ontologythat describes a specific domain such as an object-handover domain.  
+3.  Instantiation level ontology:Ontology for individuals, or instantiation knowledge.
+
+![t](https://user-images.githubusercontent.com/36643532/144047810-2ae70909-9e4b-4c84-b4f8-212b7ad3d807.png)
+
 # Installation
 1.  Create a virtual environment (this will create /pyswip_env in the current directory):  
     `python3 -m venv pyswip_env`
