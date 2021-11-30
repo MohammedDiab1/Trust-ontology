@@ -28,10 +28,12 @@ def main():
     #an existing prolog file is consulted
     prolog.consult(prologPath + "/trust.pl")
 
-    # When using SWIPL in the terminal we were calling the individuals or classes as sir_pmk:'Room_A'
-    # In this case we should replace sir_pmk with the ontology URL and add the individual or the class name after the '#' character like below
-    sir_pmk = "'https://juicer.ee.imperial.ac.uk:8443/trust.owl#"
-    room = sir_pmk + "Room_B'"
+    # In this case we should replace prl_tak with the ontology URL and add the individual or the class name after the '#' character like below
+    prl_tak = "'https://juicer.ee.imperial.ac.uk:8443/trust.owl#"
+
+
+
+    room = prl_tak + "Room_B'"
 
     # Print all the query returns for the chosen predicate, which is find_robot() in this case
     # We are providing an input to the predicate, which is the room variable created above, the return is the existing robot in the given room
@@ -44,7 +46,7 @@ def main():
          print(i, end=" ")
          print("The robot %s is in the roomB" % out[1])
 
-    Robot = sir_pmk + "icub'"
+    Robot = prl_tak + "icub'"
 
    # Print all the query returns for the chosen predicate, which is find_robot() in this case
     # We are providing an input to the predicate, which is the room variable created above, the return is the existing robot in the given room
@@ -58,7 +60,7 @@ def main():
          print("Robot can execute %s" % out[1])
 
 
-    User = sir_pmk + "mohammed'"
+    User = prl_tak + "mohammed'"
 
    # Print all the query returns for the chosen predicate, which is find_robot() in this case
     # We are providing an input to the predicate, which is the room variable created above, the return is the existing robot in the given room

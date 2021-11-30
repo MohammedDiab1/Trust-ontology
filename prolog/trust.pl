@@ -1,3 +1,8 @@
+/* Copyright © 2021 by Imperial College London (ICL), Personal Robotics Lab (PRL). 
+The ontology model represents ontological knowledge for Trust in order to provide better assessment and evaluation for domains that include humans and robots interacting with each other.
+Author: Dr. Mohammed Diab 
+email: m.diab.phd@gmail.com
+       m.diab@imperial.ac.uk */
 
 /* Predicates */
 %:- use_module(library('semweb/rdf11')).
@@ -23,7 +28,7 @@
 
 :- rdf_load('/home/diab/trust_ws/src/pmk_python_interface/ontologies/trust.owl').
 
-:- rdf_db:rdf_register_ns(sir_pmk, 'https://juicer.ee.imperial.ac.uk:8443/trust.owl#', [keep(true)]).
+:- rdf_db:rdf_register_ns(prl_tak, 'https://juicer.ee.imperial.ac.uk:8443/trust.owl#', [keep(true)]).
 
 %%%%%%%%%%%%% PROLOG FEATURES %%%%%%%%%%%%
 
@@ -39,25 +44,25 @@
 %%%%%%%%%%%% READING DATA PROPERTIES FROM THE OWL %%%%%%%%%%%%%
 
 find_robot(Room, Robot):-
- rdf_has(Room, sir_pmk:'hasRobot', R),
+ rdf_has(Room, prl_tak:'hasRobot', R),
 
 	literal_type_conv(R, Robot).
 
 find_robot_cap(Robot, Capability):-
-  rdf_has(Robot, sir_pmk:'hasCapability', C),
+  rdf_has(Robot, prl_tak:'hasCapability', C),
 
 	literal_type_conv(C, Capability).
 
 
 find_user_robot_experience(Human, Robot):-
-  rdf_has(Human, sir_pmk:'hasExpWith', H),
+  rdf_has(Human, prl_tak:'hasExpWith', H),
      
 	literal_type_conv(H, Robot).
 
 
 risky_situation(Artifact, Situation):-
 
-  rdf_has(Situation, sir_pmk:'hasRiskyPart', S),
+  rdf_has(Situation, prl_tak:'hasRiskyPart', S),
 
 	literal_type_conv(S, Artifact).
 
