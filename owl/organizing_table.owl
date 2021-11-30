@@ -1,0 +1,1175 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#"
+     xml:base="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ros="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+        <rdfs:comment>Copyright © 2021 by Imperial College London (ICL), Personal Robotics Lab (PRL).
+The ontology model represents ontological knowledge for Trust in order to provide better assessment/evaluation for domains that include humans and robots interacting with each other.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#basedOn -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#basedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>based on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#basedOnObject -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#basedOnObject">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#basedOn"/>
+        <rdfs:label>based on object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#basedOnRobotAction -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#basedOnRobotAction">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#basedOn"/>
+        <rdfs:label>based on robot action</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#creates -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#creates">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#delegates -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#delegates">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>depends on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#fewerIntervention -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#fewerIntervention">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#intervenes"/>
+        <rdfs:label>fewer intervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasAction -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasAction">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToConcept"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <rdfs:label>has action</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasBehaviour -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasBehaviour">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:label>has behaviour</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasColor -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasColor">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>has color</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasExperience -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasExperience">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:label>has experience with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasFactor -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasFactor">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>has factor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasMaterial -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasMaterial">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+        <rdfs:range rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Material"/>
+        <rdfs:label>has material</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasReaction -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasReaction">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:label>has reaction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasSpatialRelation -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasSpatialRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsDirectlyWith -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsDirectlyWith">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsWith"/>
+        <rdfs:label>interacts directly with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsIndirectlyWith -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsIndirectlyWith">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsWith"/>
+        <rdfs:label>interacts indirectly with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsWith -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>interacts with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#intervenes -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#intervenes">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#isTriggeredBy -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#isTriggeredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>is triggered by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#manyIntervention -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#manyIntervention">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#intervenes"/>
+        <rdfs:label>many intervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#nullIntervention -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#nullIntervention">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#intervenes"/>
+        <rdfs:label>null intervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#on -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#on">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasSpatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#outrages -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#outrages">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#LookRepetability -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#LookRepetability">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>look repitability</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#color -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#color">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#experienceWithICUB -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#experienceWithICUB">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>experience with icub</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#glass -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#glass">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#time01 -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#time01">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#white -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#white">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#color"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#AtomicAction -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#AtomicAction">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <rdfs:label>Primitive action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Belief -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Belief">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Capability -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Capability">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#CognitiveTrust -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#CognitiveTrust">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trust"/>
+        <rdfs:label>Cognitive trust</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Color -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Color">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#CompositAction -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#CompositAction">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <rdfs:label>Composite action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Cup -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Cup">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Delegation -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Delegation">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#TrustAct"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Dimension -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Dimension">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#DirectBehaviour -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#DirectBehaviour">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#ManifestedBehaviour"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsDirectlyWith"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsDirectlyWith"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Human"/>
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Robot"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#IndirectBehaviour"/>
+        <rdfs:comment>A behaviour that the robot has to optimaly do.</rdfs:comment>
+        <rdfs:label>Direct behaviour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#EmergentBehaviour -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#EmergentBehaviour">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:label>Emergent behaviour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Emotional_trust -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Emotional_trust">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trust"/>
+        <rdfs:label>Emotional trust</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Experience -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Experience">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#FollowingAdvice -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#FollowingAdvice">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#TrustAct"/>
+        <rdfs:label>Following advice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Glass -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Glass">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Human -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Human">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#IndirectBehaviour -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#IndirectBehaviour">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#ManifestedBehaviour"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsIndirectlyWith"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Human"/>
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Robot"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#manyIntervention"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intervention"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A behaviour that the robot has to do safely through another object when a human shows an extraordinary reaction</rdfs:comment>
+        <rdfs:label>Indirect behaviour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intention -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intention">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Interaction -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Interaction">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isQualityOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#dependsOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Personification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intervention -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intervention">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#TrustAct"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#ManifestedBehaviour -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#ManifestedBehaviour">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Interaction"/>
+        <rdfs:comment>The manifested behavior of an object in an event is the evolution of the object’s qualities and of the relationships holding among that object and any other object participating in the event.</rdfs:comment>
+        <rdfs:label>Manifested behaviour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Material -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Material">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#MoralTrust -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#MoralTrust">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trust"/>
+        <rdfs:label>Moral trust</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Performance-basedTrust -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Performance-basedTrust">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trust"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#fewerIntervention"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intervention"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasFactor"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Delegation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>focuses more on the robot performance, i.e., how the robot execute tasks/subtasks?</rdfs:comment>
+        <rdfs:label>Performance-based trust</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Relational-basedTrust -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Relational-basedTrust">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trust"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>focuses on the personality attributes, e.g., sound or emotional attributes</rdfs:comment>
+        <rdfs:label>Relational-based trust</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Risk -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Risk">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#RiskySituation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#RiskySituation -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#RiskySituation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#isTriggeredBy"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#TroubleEvent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Risky situation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Robot -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Robot">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Safe -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Safe">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#DirectBehaviour"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#nullIntervention"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intervention"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#UnsafeDirectInteraction"/>
+        <rdfs:label>Ex: a robot executes a direct handover task of a knife with a human from its non-sharp edge</rdfs:label>
+        <rdfs:label>Safe direct interaction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SafeIndirectInteraction -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SafeIndirectInteraction">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#IndirectBehaviour"/>
+        <owl:disjointWith rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#UnsafeIndirectInteraction"/>
+        <rdfs:comment>Ex: a robot executes a direct handover task of a knife with ahuman through a table.</rdfs:comment>
+        <rdfs:label>Safe indirect interaction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SharpObject -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SharpObject">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+        <rdfs:label>Sharp object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:label>Sub_task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Table -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Table">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#TroubleEvent -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#TroubleEvent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#outrages"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intention"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Trouble event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trust -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trust">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAgent"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustee"/>
+                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustor"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>the attitude that the agent will help achieve an individual&apos;s goals in a situation characterized by uncertainty and vulnerability</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#TrustAct -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#TrustAct">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <rdfs:label>Trust act</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustee -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustee">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Human"/>
+                    <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Robot"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsWith"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustor -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustor">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#delegates"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trust"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#interactsWith"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#intervenes"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Trustee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#UnsafeDirectInteraction -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#UnsafeDirectInteraction">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#DirectBehaviour"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#fewerIntervention"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Intervention"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ex: a robot executes a direct handover task of a knife with ahuman from its sharp edge.</rdfs:label>
+        <rdfs:label>Unsafe direct interaction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#UnsafeIndirectInteraction -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#UnsafeIndirectInteraction">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#IndirectBehaviour"/>
+        <rdfs:comment>Ex: a robot executes a direct handover task of a knife with ahuman through a table and leave its sharp edge out of the table.</rdfs:comment>
+        <rdfs:label>Unsafe indirect interaction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Vulnerability -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Vulnerability">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#capabilityBelief -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#capabilityBelief">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Belief"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#vulnerabilityBelief -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#vulnerabilityBelief">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Belief"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#CollisionFreePath -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#CollisionFreePath">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#AtomicAction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#LookActionReabitability -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#LookActionReabitability">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:comment>Means human keep looking to the robot several times per time interval</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Mohammed -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Mohammed">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Human"/>
+        <hasBehaviour rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#MohammedBehaviour01"/>
+        <hasExperience rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#icub"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#MohammedBehaviour01 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#MohammedBehaviour01">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#DirectBehaviour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#MohammedBehaviour02 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#MohammedBehaviour02">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#IndirectBehaviour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#color -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#color">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#cup01 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#cup01">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Cup"/>
+        <hasColor rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#color"/>
+        <hasMaterial rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material"/>
+        <on rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#table01"/>
+        <glass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></glass>
+        <white rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></white>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverCan -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverCan">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverCup -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverCup">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverWineglass -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverWineglass">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#event01 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#event01">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+        <DUL:hasParticipant rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#cup01"/>
+        <DUL:hasParticipant rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#table01"/>
+        <DUL:hasTimeInterval rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#time02"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#exp.01 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#exp.01">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Experience"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#followingAdvice -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#followingAdvice">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#handOver -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#handOver">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SubTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#icub -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#icub">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Robot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#knife -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#knife">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#SharpObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Material"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#null -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#null"/>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#on -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#on">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpatioTemporalRegion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#organiseTable -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#organiseTable">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverCan"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverCup"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#deliverWineglass"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#followingAdvice"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#handOver"/>
+        <rdfs:comment>consider the table contains several objects like cans, wineglasses,...etc</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#push -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#push">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#AtomicAction"/>
+        <DUL:hasPrecondition rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#pushPrecondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#pushPrecondition -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#pushPrecondition">
+        <DUL:hasConstituent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#CollisionFreePath"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#risk -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#risk">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Risk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#situation01 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#situation01">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#cup01"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#event01"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#icub"/>
+        <DUL:hasComponent rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#table01"/>
+        <DUL:includesPart rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#push"/>
+        <creates rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#risk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#table01 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#table01">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Table"/>
+        <hasColor rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#white"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#time01 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#time01">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#time02 -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#time02">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#white -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#white">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Color"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
