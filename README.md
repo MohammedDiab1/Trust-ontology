@@ -9,6 +9,10 @@ The knowledge structure contains 3-level ontologies:
 
 ![t](https://user-images.githubusercontent.com/36643532/144047810-2ae70909-9e4b-4c84-b4f8-212b7ad3d807.png)
 
+The metaontology level forTrust, concepts and relations:  Metaontology level is used torepresent fundamental information such as the concept of Trust.  The metaontology layer provides atemplate for any potential working domain.  The metaontology level covers six aspects of knowledge required for trust.  These aspects provide knowledge regarding Trust, Risk, Interaction, Personalisation, Situation,and Environmental description.  The yellow highlighting represents the concepts usedin DOLCE+DnS Ultralite (DUL) upper-level ontology.
+
+![Screenshot from 2021-11-30 13-32-01](https://user-images.githubusercontent.com/36643532/144056537-8c323933-9f7b-416b-aabf-6e0f564480cc.png)
+
 # Installation
 1.  Create a virtual environment (this will create /pyswip_env in the current directory):  
     `python3 -m venv pyswip_env`
