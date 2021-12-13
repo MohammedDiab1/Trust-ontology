@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1633958578469" name="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl" uri="organizing_table.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1633958578469" name="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl" uri="trust_architecture.owl"/>
-    </group>
-</catalog>
