@@ -30,9 +30,9 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPrecondition -->
 
-    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPrecondition">
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPrecondition">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
@@ -102,22 +102,6 @@ The ontology model represents ontological knowledge for Trust in order to provid
     <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#dependsOn">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
         <rdfs:label>depends on</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disrupts -->
-
-    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disrupts">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#exploits -->
-
-    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#exploits">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
     </owl:ObjectProperty>
     
 
@@ -681,17 +665,17 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Hazardous -->
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#HazardousEvent -->
 
-    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Hazardous">
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#HazardousEvent">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disrupts"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trust"/>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#outrages"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Intention"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Hazardous</rdfs:label>
+        <rdfs:label>Hazardous event</rdfs:label>
     </owl:Class>
     
 
@@ -770,6 +754,12 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Intention">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -927,12 +917,6 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#PursuedGoal">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
-                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label>Pursued goal</rdfs:label>
     </owl:Class>
     
@@ -985,20 +969,7 @@ The ontology model represents ontological knowledge for Trust in order to provid
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isTriggeredBy"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Hazardous"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#exploits"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Thread"/>
-                            <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#HazardousEvent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>is a product of Thread and Vulnerability</rdfs:comment>
@@ -1048,7 +1019,6 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RunTimeProblem">
         <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Source"/>
-        <rdfs:label>Run time problem</rdfs:label>
     </owl:Class>
     
 
@@ -1122,23 +1092,10 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Thread -->
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreadEvent -->
 
-    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Thread">
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreadEvent">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disrupts"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Intention"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isTriggeredBy"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#softwareComponents"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>is an event that contains entities that may casue damage or danger, such as a robot picking up a dangerous object (Sharp-edged object).</rdfs:comment>
     </owl:Class>
     
 
@@ -1358,12 +1315,6 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#exploits"/>
-                <owl:allValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Thread"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasComponent"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#vulnerabilityBelief"/>
@@ -1386,6 +1337,12 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#capabilityBelief">
         <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Belief"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Capability belief</rdfs:label>
     </owl:Class>
     
@@ -1437,6 +1394,12 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#vulnerabilityBelief">
         <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Belief"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Vulnerability belief</rdfs:label>
     </owl:Class>
 </rdf:RDF>
