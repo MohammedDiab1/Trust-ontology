@@ -1561,7 +1561,12 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
                 <owl:onClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#vulnerabilityBelief"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>can be seen as a precondition of TRUST Actions</rdfs:comment>
+        <rdfs:comment>can be seen as a precondition of TRUST Actions. It is definitely used from the Trustee (robot) perspective. 
+
+Ex. the robot can not execute pick action because the object is over-weighted
+
+
+Important note: Vulnerability belief is used from the Trustor (Human) perspective.</rdfs:comment>
         <rdfs:comment>is a quality of the weakness or a gap of a system/agent performance, including its components and communication between them exploting the Threat event.</rdfs:comment>
     </owl:Class>
     
@@ -1628,6 +1633,11 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Vulnerability belief is used from the Trustor (Human) perspective.
+
+Ex:      The robot is perfect to pick an object from a cluttered environment and probably is not going to have performance issues ​
+
+Important note: Vulnerability is used from the Trustee (robot) perspective.</rdfs:comment>
         <rdfs:label>Vulnerability belief</rdfs:label>
     </owl:Class>
     
