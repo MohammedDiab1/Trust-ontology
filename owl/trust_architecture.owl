@@ -31,6 +31,7 @@ The ontology model represents ontological knowledge for Trust in order to provid
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPrecondition -->
 
     <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPrecondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
     </owl:ObjectProperty>
     
@@ -260,11 +261,29 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isAffectedBy -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isAffectedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>is affected by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isCausedBy -->
 
     <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isCausedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
         <rdfs:label>is caused by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isRecoveredFrom -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isRecoveredFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>is recovered from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -322,9 +341,17 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#outrages -->
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#provides -->
 
-    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#outrages">
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#provides">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disrupts​ -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disrupts​">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
     </owl:ObjectProperty>
     
@@ -414,6 +441,19 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute -->
 
     <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute">
@@ -421,6 +461,45 @@ The ontology model represents ontological knowledge for Trust in order to provid
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasEffect"/>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trust"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isAffectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isAffectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreatEvent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isAffectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson">
+        <owl:equivalentClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </rdf:Description>
@@ -711,11 +790,11 @@ The ontology model represents ontological knowledge for Trust in order to provid
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#outrages"/>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disrupts​"/>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Intention"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Hazardous event</rdfs:label>
+        <rdfs:label>Hazardous</rdfs:label>
     </owl:Class>
     
 
@@ -1006,6 +1085,21 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Rationality">
         <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Task-environment-related"/>
+        <rdfs:comment>is the fact of being not logical in executing the task.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Recommendation -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Recommendation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isRecoveredFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1014,12 +1108,6 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Relational-basedTrust">
         <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trust"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
-                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>focuses on the personality attributes, e.g., sound or emotional attributes</rdfs:comment>
         <rdfs:label>Relational-based trust</rdfs:label>
     </owl:Class>
@@ -1038,6 +1126,7 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Revocability">
         <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Task-environment-related"/>
+        <rdfs:comment></rdfs:comment>
     </owl:Class>
     
 
@@ -1097,9 +1186,19 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskySituation -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskySituation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:label>Risky situation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Robot -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Robot">
+        <owl:equivalentClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustee"/>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
     </owl:Class>
     
@@ -1215,10 +1314,11 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreadEvent -->
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreatEvent -->
 
-    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreadEvent">
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreatEvent">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
+        <rdfs:label>Threat</rdfs:label>
     </owl:Class>
     
 
@@ -1272,6 +1372,12 @@ The ontology model represents ontological knowledge for Trust in order to provid
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#dependsOn"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Interaction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasFactor"/>
                 <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute"/>
             </owl:Restriction>
@@ -1318,13 +1424,7 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasEffect"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trust"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disTrustAct"/>
         <rdfs:label>Trust act</rdfs:label>
     </owl:Class>
     
@@ -1333,7 +1433,7 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustee -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustee">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1348,6 +1448,12 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#provides"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Recommendation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1355,11 +1461,17 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#delegates"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trust"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#delegates"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#SubTask"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1382,6 +1494,12 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Uncertainty">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpatioTemporalRegion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#MayLeadTo"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1399,7 +1517,7 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOfInformationRealizedBy"/>
@@ -1443,15 +1561,8 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
                 <owl:onClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#vulnerabilityBelief"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptUsedIn"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trust"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>can be seen as a precondition of TRUST Actions</rdfs:comment>
-        <rdfs:comment>is a quality of the weakness or a gap of a system/agent performance, including its components and communication between them exploting the Thread event.</rdfs:comment>
+        <rdfs:comment>is a quality of the weakness or a gap of a system/agent performance, including its components and communication between them exploting the Threat event.</rdfs:comment>
     </owl:Class>
     
 
@@ -1493,13 +1604,6 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasEffect"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trust"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label>Dis-trust act</rdfs:label>
     </owl:Class>
     
@@ -1526,6 +1630,57 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:label>Vulnerability belief</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Grasp-non_existing-object -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Grasp-non_existing-object">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Rationality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Manipulate-object-in-cluttered-scene -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Manipulate-object-in-cluttered-scene">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Task-Complexity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Robot-Speedy-in-small-room -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Robot-Speedy-in-small-room">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Revocability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Robot-hurts-human -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Robot-hurts-human">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Risk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#robot-slow-down-speed -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#robot-slow-down-speed">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Recommendation"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
