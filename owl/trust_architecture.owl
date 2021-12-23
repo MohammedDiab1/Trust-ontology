@@ -732,6 +732,21 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ExtremelyHarmful -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ExtremelyHarmful">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Risk"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasValue"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#High"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Extremely harmful</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#FailureNarrativeRole -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#FailureNarrativeRole">
@@ -784,6 +799,20 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Harmful -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Harmful">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Risk"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasValue"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#HazardousEvent -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#HazardousEvent">
@@ -795,6 +824,14 @@ The ontology model represents ontological knowledge for Trust in order to provid
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>Hazardous</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#High -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#High">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskAssessmentLevel"/>
     </owl:Class>
     
 
@@ -927,18 +964,18 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Level -->
-
-    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Level">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute"/>
-    </owl:Class>
-    
-
-
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Likeability-and-friendliness -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Likeability-and-friendliness">
         <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Behaviour-related"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Low -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Low">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskAssessmentLevel"/>
     </owl:Class>
     
 
@@ -979,6 +1016,14 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Material">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Medium -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Medium">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskAssessmentLevel"/>
     </owl:Class>
     
 
@@ -1150,7 +1195,7 @@ The ontology model represents ontological knowledge for Trust in order to provid
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasValue"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Level"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskAssessmentLevel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1161,6 +1206,15 @@ The ontology model represents ontological knowledge for Trust in order to provid
         </rdfs:subClassOf>
         <rdfs:comment>is a product of Thread and Vulnerability</rdfs:comment>
         <rdfs:comment>is a stituation that can potentially lead to loss, damage and harm as a result of Thread event exploiting Vulnerability.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskAssessmentLevel -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskAssessmentLevel">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute"/>
+        <rdfs:label>Risk assessment level</rdfs:label>
     </owl:Class>
     
 
@@ -1252,6 +1306,21 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Similarity-with-operator">
         <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Appearance-related"/>
+    </owl:Class>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#SlightlyHarmful -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#SlightlyHarmful">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Risk"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasValue"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Slightly harmful</rdfs:label>
     </owl:Class>
     
 
@@ -1540,6 +1609,12 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasEffect"/>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Interaction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasValue"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#High"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
