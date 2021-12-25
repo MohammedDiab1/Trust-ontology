@@ -1,6 +1,6 @@
 /* Copyright © 2021 by Imperial College London (ICL), Personal Robotics Lab (PRL). 
 The ontology model represents ontological knowledge for Trust in order to provide better assessment and evaluation for domains that include humans and robots interacting with each other.
-Author: Dr. Mohammed Diab 
+Author: Mohammed Diab 
 email: m.diab.phd@gmail.com
        m.diab@imperial.ac.uk */
 
@@ -18,15 +18,15 @@ email: m.diab.phd@gmail.com
 %Setting resources for predicates.
 :-  rdf_meta
  find_subclass(r,r),
- find_robot(r,r),
- find_robot_cap(r,r),
+find_human_intention(r,r),
+ find_robot_capability(r,r),
  find_user_robot_experience(r,r),
  risky_situation(r,r),
  trust(r,r).
 
 %Parsing the pmk ontology [to be modified by the user to access his/her ontology].
 
-:- rdf_load('/home/diab/trust_ws/src/pmk_python_interface/ontologies/trust.owl').
+:- rdf_load('/home/kinova/trust_ws/src/Trust-ontology/owl/trust.owl').
 
 :- rdf_db:rdf_register_ns(prl_tak, 'https://juicer.ee.imperial.ac.uk:8443/trust.owl#', [keep(true)]).
 
@@ -43,15 +43,24 @@ email: m.diab.phd@gmail.com
 
 %%%%%%%%%%%% READING DATA PROPERTIES FROM THE OWL %%%%%%%%%%%%%
 
-find_robot(Room, Robot):-
- rdf_has(Room, prl_tak:'hasRobot', R),
+find_
+
+%Infer intention of trustor (Human)
+find_human_intention(Human, Intention):-
+ rdf_has(Intention, prl_tak:'hasIntention', R),
 
 	literal_type_conv(R, Robot).
 
-find_robot_cap(Robot, Capability):-
+%Infer human belief about a robot (a set of composed belief regarding robot Capability, robot behaviour, vulnerability belief)
+find_robot_capability(Robot, Capability):-
   rdf_has(Robot, prl_tak:'hasCapability', C),
 
 	literal_type_conv(C, Capability).
+
+find_human_vulnerability_belief(Human, VulnerabilityBelief):-
+  rdf_has(VulnerabilityBelief, prl_tak:'hasVulnerabilityBelief', V),
+
+  	literal_type_conv(V, VulnerabilityBelief).
 
 
 find_user_robot_experience(Human, Robot):-
