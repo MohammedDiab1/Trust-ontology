@@ -1715,6 +1715,9 @@ Important note: Vulnerability belief is used from the Trustor (Human) perspectiv
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>the belief that the Trustee’s Vulnerabilities will not prevent him from performing the desired action [*]
+
+[*] Amaral, Glenda, Tiago Prince Sales, Giancarlo Guizzardi, and Daniele Porello. &quot;Towards a reference ontology of trust.&quot; In OTM Confederated International Conferences&quot; On the Move to Meaningful Internet Systems&quot;, pp. 3-21. Springer, Cham, 2019.</rdfs:comment>
         <rdfs:label>Capability belief</rdfs:label>
     </owl:Class>
     
@@ -1771,6 +1774,9 @@ Important note: Vulnerability belief is used from the Trustor (Human) perspectiv
 Ex:      The robot is perfect to pick an object from a cluttered environment and probably is not going to have performance issues ​
 
 Important note: Vulnerability is used from the Trustee (robot) perspective.</rdfs:comment>
+        <rdfs:comment>the Belief that the Trustee has the Capability to perform the desired action [*]
+
+[*] Amaral, Glenda, Tiago Prince Sales, Giancarlo Guizzardi, and Daniele Porello. &quot;Towards a reference ontology of trust.&quot; In OTM Confederated International Conferences&quot; On the Move to Meaningful Internet Systems&quot;, pp. 3-21. Springer, Cham, 2019.</rdfs:comment>
         <rdfs:label>Vulnerability belief</rdfs:label>
     </owl:Class>
     
