@@ -1,6 +1,6 @@
-/* Copyright © 2021 by Imperial College London (ICL), Personal Robotics Lab (PRL). 
+/* Copyright © 2021 by Imperial College London (ICL), Personal Robotics Lab (PRL).
 The ontology model represents ontological knowledge for Trust in order to provide better assessment and evaluation for domains that include humans and robots interacting with each other.
-Author: Mohammed Diab 
+Author: Mohammed Diab
 email: m.diab.phd@gmail.com
        m.diab@imperial.ac.uk */
 
@@ -26,9 +26,9 @@ find_human_intention(r,r),
 
 %Parsing the pmk ontology [to be modified by the user to access his/her ontology].
 
-:- rdf_load('/home/kinova/trust_ws/src/Trust-ontology/owl/trust_architecture.owl').
+:- rdf_load('/home/kinova/trust_ws/src/Trust-ontology/owl/organizing_table.owl').
 
-:- rdf_db:rdf_register_ns(prl_tak, 'https://juicer.ee.imperial.ac.uk:8443/trust_architecture.owl#', [keep(true)]).
+:- rdf_db:rdf_register_ns(prl_tak, 'https://juicer.ee.imperial.ac.uk:8443/organizing_table.owl#', [keep(true)]).
 
 %%%%%%%%%%%%% PROLOG FEATURES %%%%%%%%%%%%
 
@@ -43,4 +43,7 @@ find_human_intention(r,r),
 
 %%%%%%%%%%%% READING DATA PROPERTIES FROM THE OWL %%%%%%%%%%%%%
 
+find_human_intention(Belief, Human):-
+    rdf_has(Belief, prl_tak:'hasBelief', R),
 
+    	literal_type_conv(R, Human).

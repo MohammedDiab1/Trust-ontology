@@ -199,7 +199,6 @@ The ontology model represents ontological knowledge for Trust in order to provid
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
         <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
         <rdfs:range rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Material"/>
-        <rdfs:label>has material</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -211,6 +210,14 @@ The ontology model represents ontological knowledge for Trust in order to provid
         <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
         <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
         <rdfs:label>has reaction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasRobot -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#hasRobot">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
     </owl:ObjectProperty>
     
 
@@ -395,9 +402,9 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#color -->
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#colour -->
 
-    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#color">
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#colour">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue"/>
     </owl:DatatypeProperty>
     
@@ -441,7 +448,7 @@ The ontology model represents ontological knowledge for Trust in order to provid
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#white -->
 
     <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#white">
-        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#color"/>
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#colour"/>
     </owl:DatatypeProperty>
     
 
@@ -627,9 +634,9 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Color -->
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Colour -->
 
-    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Color">
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Colour">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute"/>
     </owl:Class>
     
@@ -1687,13 +1694,6 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#softwareComponents"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasComponent"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#vulnerabilityBelief"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>can be seen as a precondition of TRUST Actions. It is definitely used from the Trustee (robot) perspective. 
 
 Ex. the robot can not execute pick action because the object is over-weighted
@@ -1715,7 +1715,7 @@ Important note: Vulnerability belief is used from the Trustor (Human) perspectiv
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trustor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>the belief that the Trustee’s Vulnerabilities will not prevent him from performing the desired action [*]
+        <rdfs:comment>the belief that the Trustee’s Vulnerabilities will not prevent human from performing the desired action [*]
 
 [*] Amaral, Glenda, Tiago Prince Sales, Giancarlo Guizzardi, and Daniele Porello. &quot;Towards a reference ontology of trust.&quot; In OTM Confederated International Conferences&quot; On the Move to Meaningful Internet Systems&quot;, pp. 3-21. Springer, Cham, 2019.</rdfs:comment>
         <rdfs:label>Capability belief</rdfs:label>
@@ -1801,10 +1801,26 @@ Important note: Vulnerability is used from the Trustee (robot) perspective.</rdf
     
 
 
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Kinova -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Kinova">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Robot"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Manipulate-object-in-cluttered-scene -->
 
     <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Manipulate-object-in-cluttered-scene">
         <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Task-Complexity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Mohammed -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Mohammed">
+        <hasRobot rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Kinova"/>
     </owl:NamedIndividual>
     
 
@@ -1821,6 +1837,14 @@ Important note: Vulnerability is used from the Trustee (robot) perspective.</rdf
 
     <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Robot-hurts-human">
         <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Risk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#belief -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#belief">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Belief"/>
     </owl:NamedIndividual>
     
 

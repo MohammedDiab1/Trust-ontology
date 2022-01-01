@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#"
+     xml:base="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ros="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:trust_architecture="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#">
+    <owl:Ontology rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl">
+        <owl:imports rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl"/>
+        <rdfs:comment>Copyright © 2021 by Imperial College London (ICL), Personal Robotics Lab (PRL).
+The ontology model represents ontological knowledge for Trust in order to provide better assessment/evaluation for domains that include humans and robots interacting with each other.</rdfs:comment>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasBelief -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasBelief">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasGoal -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasGoal">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>has goal</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasLabel -->
+
+    <owl:ObjectProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#hasLabel">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>has label</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#belief -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#belief">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue"/>
+        <rdfs:domain rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Belief"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#red -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#red">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#colour"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#transferInCluttered -->
+
+    <owl:DatatypeProperty rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#transferInCluttered">
+        <rdfs:subPropertyOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#belief"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Wineglass -->
+
+    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Wineglass">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Mohammed -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Mohammed">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Human"/>
+        <hasBelief rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#belief"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#belief -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#belief">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Belief"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#colour -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#colour">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Colour"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#handOverWineglassToHuman -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#handOverWineglassToHuman">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#handOver_wineGlass -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#handOver_wineGlass">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#SubTask"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#manipulationInCluttered -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#manipulationInCluttered">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#vulnerabilityBelief"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Material"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#wineglass -->
+
+    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#wineglass">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#Wineglass"/>
+        <hasLabel rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#colour"/>
+        <trust_architecture:hasMaterial rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/organizing_table.owl#material"/>
+        <red rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></red>
+        <trust_architecture:glass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></trust_architecture:glass>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
