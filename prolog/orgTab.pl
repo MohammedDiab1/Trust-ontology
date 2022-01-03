@@ -29,6 +29,8 @@ email: m.diab.phd@gmail.com
  find_threat(r,r),
  find_vul_from_threat(r,r,r,r),
  find_vulnerability(r,r,r,r),
+ find_sit_low_risk(r,r),
+ find_risky_sit(r,r,r),
  find_user_robot_experience(r,r),
  risky_situation(r,r),
  trust(r,r).
@@ -85,16 +87,16 @@ find_intention(Intention, BeliefOf, Belief, Goal, Type):-
 	literal_type_conv(T, Type).
   	
 %%%%%%%%%%%%%%%%%% ROBOT CAPABILITY %%%%%%%%%%%%%%%%%%%%
+which_robot_has_capability(Robot, CapabilityOf):-
+    rdf_has(Robot, prl_tak:'hasCapability', C),
+
+	literal_type_conv(C, CapabilityOf).
+
 find_robot_capability(Robot, Capability):-
     rdf_has(Robot, prl_tak:'capability', A),
 
 	literal_type_conv(A, Capability).
 
-
-which_robot_has_capability(Robot, CapabilityOf):-
-    rdf_has(Robot, prl_tak:'hasCapability', C),
-
-	literal_type_conv(C, CapabilityOf).
 
 %%%%%%%%%%%%%%%%%% Threat, Vulnerability and Risk %%%%%%%%%%%%%%%%%%%%
 %which Event has threat?
@@ -103,7 +105,7 @@ find_threat(Event, Threat):-
 	
 	literal_type_conv(Th, Threat).
 
-%does this threat leads to vulnerability?
+%does this threat lead to vulnerability?
 find_vul_from_threat(Event, Threat, Agent, Type):-
     (rdf_has(Event, prl_tak:'threat', Th) -> literal_type_conv(Th, Threat); true),
     (rdf_has(Event, prl_tak:'hasNoCapability', Ca) -> literal_type_conv(Ca, Agent); true),
@@ -121,6 +123,22 @@ find_vulnerability(Vulnerability, Agent, Threat, Type):-
      rdf_has(Agent, rdf:type, Ty),
 	
 	literal_type_conv(Ty, Type).
+
+
+find_sit_low_risk(LowRisk, Situation):-
+     rdf_has(LowRisk, prl_tak:'isSlightlyHarmful', R),
+
+
+	literal_type_conv(R, Situation).
+
+
+find_risky_sit(Risk, Situation, Type):-
+     (rdf_has(Risk, prl_tak:'isHarmful', R) -> literal_type_conv(R, Situation); true),
+     (rdf_has(Risk, prl_tak:'isSlightlyHarmful', RR) -> literal_type_conv(RR, Situation); true),
+
+      rdf_has(Risk, rdf:type, T),
+
+	literal_type_conv(T, Type).
 
 
 

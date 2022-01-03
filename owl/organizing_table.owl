@@ -107,11 +107,36 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#isHarmful -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#isHarmful">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#isIntentionOf -->
 
     <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#isIntentionOf">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
         <rdfs:comment>is intention of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#isSlightlyHarmful -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#isSlightlyHarmful">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>is slightly harmful</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#prevents -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#prevents">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
     </owl:ObjectProperty>
     
 
@@ -211,6 +236,14 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskySituation -->
+
+    <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskySituation">
+        <rdfs:comment>is a stituation that can potentially lead to loss, damage and harm as a result of Threat event exploiting Vulnerability.</rdfs:comment>
+    </rdf:Description>
+    
+
+
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreatEvent -->
 
     <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreatEvent">
@@ -220,6 +253,7 @@ The ontology model represents ontological knowledge for Trust in order to provid
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>is an event that contains entities that may cause damage or danger, such as a robot picking up a dangerous object (Sharp-edged object).​</rdfs:comment>
     </rdf:Description>
     
 
@@ -277,6 +311,14 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#glass -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#glass">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Material"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#goal01 -->
 
     <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#goal01">
@@ -313,6 +355,20 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#low-risk-situation -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#low-risk-situation">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskySituation"/>
+        <hasVulnerability rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#vulnerability"/>
+        <isSlightlyHarmful rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#low-risk-situation"/>
+        <prevents rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#sideGrasp"/>
+        <DUL:hasConstituent rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#handOver_wineGlass"/>
+        <DUL:hasConstituent rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#threatEvent"/>
+        <DUL:hasConstituent rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#wineGlass"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#manipulationInCluttered -->
 
     <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#manipulationInCluttered">
@@ -330,11 +386,23 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- http://www.ease-crc.org/ont/organizing_table.owl#situation -->
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#risky-situation -->
 
-    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#situation">
-        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#risky-situation">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskySituation"/>
+        <hasVulnerability rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#vulnerability"/>
+        <isHarmful rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#risky-situation"/>
+        <prevents rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#topGrasp"/>
+        <DUL:hasConstituent rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#handOver_wineGlass"/>
+        <DUL:hasConstituent rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#threatEvent"/>
+        <DUL:hasConstituent rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#wineGlass"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#sideGrasp -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#sideGrasp"/>
     
 
 
@@ -347,12 +415,27 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#topGrasp -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#topGrasp"/>
+    
+
+
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#vulnerability -->
 
     <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#vulnerability">
         <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
         <DUL:isIntroducedBy rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#threatEvent"/>
         <vulnerability rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;the robot can drop the liquid inside the cup when it grasps the cup from its handle&quot;</vulnerability>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#wineGlass -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#wineGlass">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Cup"/>
+        <trust_architecture:hasMaterial rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#glass"/>
     </owl:NamedIndividual>
     
 
@@ -368,6 +451,20 @@ The ontology model represents ontological knowledge for Trust in order to provid
         <capability rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;NAVIGATION capability&quot;</capability>
         <goal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;transfer the wineglass to Mohammed&quot;</goal>
         <vulnerability rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;the robot can drop the liquid inside the cup when it grasps the cup from its handle&quot;</vulnerability>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Risk">
+        <rdfs:comment>is a probabilistic value that can potentially lead to loss or harm as a result of a Threat event exploiting Vulnerability. The risk can be assessed only if the threat and vulnerability occurred.</rdfs:comment>
     </rdf:Description>
 </rdf:RDF>
 

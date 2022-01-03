@@ -866,21 +866,6 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#HazardousEvent -->
-
-    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#HazardousEvent">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#disrupts​"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Intention"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label>Hazardous</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#High -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#High">
@@ -1263,14 +1248,8 @@ The ontology model represents ontological knowledge for Trust in order to provid
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskAssessmentLevel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isTriggeredBy"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#HazardousEvent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>is a product of Thread and Vulnerability</rdfs:comment>
-        <rdfs:comment>is a stituation that can potentially lead to loss, damage and harm as a result of Thread event exploiting Vulnerability.</rdfs:comment>
+        <rdfs:comment>is the probability of experiencing harm that is associated with an action or behaviour or the likelihood that a negative event will occur.</rdfs:comment>
     </owl:Class>
     
 
