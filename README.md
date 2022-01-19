@@ -21,7 +21,7 @@ The metaontology level forTrust, concepts and relations:  Metaontology level is 
 1.  Install swi-prolog:  
     `sudo apt install swi-prolog`
 1.  After installation, clone pmk_python_interface repository into the same directory where /pyswip_env is placed:  
-    ``
+    `git@github.com:MohammedDiab1/Trust-ontology.git`
 1.  Go inside /pmk_python_interface and Install PySWIP:  
     `pip install pyswip` 
     
