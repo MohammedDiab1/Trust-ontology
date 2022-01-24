@@ -464,6 +464,12 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#Reliability -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#Reliability"/>
+    
+
+
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent -->
 
     <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent">
@@ -1209,14 +1215,6 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Reliability -->
-
-    <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Reliability">
-        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Performance-related"/>
-    </owl:Class>
-    
-
-
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Revocability -->
 
     <owl:Class rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Revocability">
@@ -1249,7 +1247,6 @@ The ontology model represents ontological knowledge for Trust in order to provid
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>is a product of Thread and Vulnerability</rdfs:comment>
-        <rdfs:comment>is the probability of experiencing harm that is associated with an action or behaviour or the likelihood that a negative event will occur.</rdfs:comment>
     </owl:Class>
     
 
@@ -1646,7 +1643,7 @@ precondition: vulnerability, uncertainty and risk</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#dependsOn"/>
-                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Capability"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#Reliability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

@@ -90,6 +90,15 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#hasPlan -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#hasPlan">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:label>has plan</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#hasSubTask -->
 
     <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#hasSubTask">
@@ -136,6 +145,14 @@ The ontology model represents ontological knowledge for Trust in order to provid
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#prevents -->
 
     <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#prevents">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#suggests -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#suggests">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
     </owl:ObjectProperty>
     
@@ -228,10 +245,117 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#Explainability -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#Explainability">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+        <rdfs:comment>is the description of what an agent does or thinks to do.​</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#ExplainableSituation -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#ExplainableSituation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#Explainability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#ExplanabilityMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>is a critical situation, with high probabilities to cause risk, that requires to be explained by a system to pay the attention of the participants in order to prevent any type of harm to them.​
+
+Ex: a robot needs to explain a situation that creates risk to its participant.</rdfs:comment>
+        <rdfs:label>Explainable situation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#ExplanabilityMethod -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#ExplanabilityMethod">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method"/>
+        <rdfs:label>Explainability method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#Gesture -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#Gesture">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#ExplanabilityMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#Institutional-basedTrust -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#Institutional-basedTrust">
+        <rdfs:subClassOf rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Trust"/>
+        <rdfs:label>Institutional-based trust</rdfs:label>
+        <rdfs:label>communication-based trust</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#Reliability -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#Reliability">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Capability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#dependsOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>is a quality of the agents or systems to be capable to perform actions/tasks in a certain situation.​
+
+    Ex: although the robot has a navigation capability, it cannot move freely in a very narrow space.​</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#Speech -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#Speech">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#ExplanabilityMethod"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#Wineglass -->
 
     <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#Wineglass">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#facial -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#facial">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#hand -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#hand">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#Gesture"/>
     </owl:Class>
     
 
@@ -261,6 +385,29 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Capability -->
+
+    <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Capability">
+        <rdfs:comment>is an individual quality of an agent or system by which the agent can participate in an event within other objects to achieve its goal.​
+
+    Ex: the robot has a capability to navigate from location X to Y​</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Recommendation -->
+
+    <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Recommendation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#isAffectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskySituation -->
 
     <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#RiskySituation">
@@ -274,11 +421,19 @@ The ontology model represents ontological knowledge for Trust in order to provid
     <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#ThreatEvent">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#suggests"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#Explainability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#MayLeadTo"/>
                 <owl:someValuesFrom rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Vulnerability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>is an event that contains entities that may cause damage or danger, such as a robot picking up a dangerous object (Sharp-edged object).​</rdfs:comment>
+        <rdfs:comment>is an event that contains objects that may cause damage or danger, such as a robot picking up a dangerous object (Sharp-edged object like scissors). Moreover, it may lead to the agent&apos;s vulnerability.​
+
+    Ex: a robot work in cluttered environment​</rdfs:comment>
     </rdf:Description>
     
 
@@ -364,6 +519,7 @@ The ontology model represents ontological knowledge for Trust in order to provid
 
     <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#handOver_wineGlass">
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <hasPlan rdf:resource="http://www.ease-crc.org/ont/organizing_table.owl#transit-pickUp-move-release"/>
     </owl:NamedIndividual>
     
 
@@ -411,6 +567,14 @@ The ontology model represents ontological knowledge for Trust in order to provid
     
 
 
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#observingMyBehaviour -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#observingMyBehaviour">
+        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Recommendation"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#risky-situation -->
 
     <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#risky-situation">
@@ -443,6 +607,14 @@ The ontology model represents ontological knowledge for Trust in order to provid
     <!-- http://www.ease-crc.org/ont/organizing_table.owl#topGrasp -->
 
     <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#topGrasp"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/organizing_table.owl#transit-pickUp-move-release -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/organizing_table.owl#transit-pickUp-move-release">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    </owl:NamedIndividual>
     
 
 
@@ -489,7 +661,9 @@ The ontology model represents ontological knowledge for Trust in order to provid
      -->
 
     <rdf:Description rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Risk">
-        <rdfs:comment>is a probabilistic value that can potentially lead to loss or harm as a result of a Threat event exploiting Vulnerability. The risk can be assessed only if the threat and vulnerability occurred.</rdfs:comment>
+        <rdfs:comment>is a probabilistic value that can potentially lead to loss or harm as a result of a Threat event exploiting Vulnerability. The risk can be assessed based on the threat event and vulnerability of an agent.​
+
+    Ex: a robot can be harmful if its speed is very high while sharing a task with a human in a small region​</rdfs:comment>
     </rdf:Description>
 </rdf:RDF>
 
