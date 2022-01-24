@@ -1820,14 +1820,6 @@ Important note: Vulnerability is used from the Trustee (robot) perspective.</rdf
     
 
 
-    <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#belief -->
-
-    <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#belief">
-        <rdf:type rdf:resource="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#Belief"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#robot-slow-down-speed -->
 
     <owl:NamedIndividual rdf:about="https://juicer.ee.imperial.ac.uk:8443/ont/trust_architecture.owl#robot-slow-down-speed">
