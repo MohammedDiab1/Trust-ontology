@@ -24,7 +24,7 @@ find_human_intention(r,r),
  risky_situation(r,r),
  trust(r,r).
 
-%Parsing the pmk ontology [to be modified by the user to access his/her ontology].
+%Parsing your ontology (Trust ontology in this case) [to be modified by the user to access his/her ontology].
 
 :- rdf_load('/home/kinova/trust_ws/src/Trust-ontology/owl/trust_architecture.owl').
 
