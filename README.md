@@ -51,7 +51,7 @@ prl stands for Personal Robotics Lab, and the tak stands for Trust Architecture 
 Simply, you can use one of the simple predicates implemented in the trust.pl file to retrieve information regarding the robot and its capability, object and the risky objects.
 For instance, to reason on which robot exist in the current room, you can type this predicate in the terminal: 
 
-`find_robot(Room, Robot).`
+`find_human_goal(Human, Goal).`
 
 
 # Links of the dependancies
