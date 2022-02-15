@@ -49,7 +49,7 @@ prl stands for Personal Robotics Lab, and the tak stands for Trust Architecture 
 
 # How to retrieve/reason over the trust ontology?
 Simply, you can use one of the simple predicates implemented in the trust.pl file to retrieve information regarding the robot and its capability, object and the risky objects.
-For instance, to reason on which robot exist in the current room, you can type this predicate in the terminal: 
+For instance, to reason on what is the current goal of a human, you can type this predicate in the terminal: 
 
 `find_human_goal(Human, Goal).`
 
